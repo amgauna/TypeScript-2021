@@ -1,0 +1,14 @@
+<form #imageForm=ngForm (ngSubmit)="OnSubmit(Image)">
+
+    <img [src]="imageUrl" class="imgArea">
+    <div class="image-upload">
+        <label for="file-input">
+            <img src="upload.jpg" />
+        </label>
+
+        <input id="file-input" #Image type="file" (change)="handleFileInput($event.target.files)" />
+        <button type="submit" class="btn-large btn-submit" [disabled]="Image.value=='' || !imageForm.valid"><i
+                class="material-icons">save</i></button>
+    </div>
+  
+</form>
